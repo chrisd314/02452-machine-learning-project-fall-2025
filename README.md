@@ -1,1 +1,1 @@
-# 02452_Machine_Learning_Project_Fall_2025
+# 02452_machine_learning_project_fall_2025
