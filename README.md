@@ -35,15 +35,12 @@ Each notebook loads `Concrete_Data.xls` directly and can be evaluated independen
 
 [Concrete_Readme.txt](Concrete_Readme.txt) contains the dataset description, variable units, attribution, and reuse notice. `Plots/` contains the exported figures retained with the coursework.
 
-`requirements.txt` records the numerical, statistical, plotting, spreadsheet-reading, and notebook-kernel libraries used by the analyses.
-
 ## Output
 
-The current notebooks display their tables, metrics, and plots as notebook output. They do not automatically write new workbooks, model files, or plot files. The PNG files under `Plots/` are tracked project artifacts rather than a guaranteed output of each notebook run.
+The current notebooks display their tables, metrics, and plots as notebook output. They do not automatically write new workbooks, model files, or plot files.
 
 ## Limitations and Assumptions
 
 - The dataset contains 1,030 observations, eight quantitative predictors, and one compressive-strength target measured in MPa
 - `Concrete_Data.xls` must remain in the repository root because both notebooks use that relative path
-- The retained PNG files are reference artifacts; the current notebooks do not save or refresh them automatically
-- This is an offline coursework repository; it has no API credentials or external service configuration
+- The PNG files under `Plots/` are tracked project artifacts rather than a guaranteed output of each notebook run; the current notebooks do not save or refresh them automatically
