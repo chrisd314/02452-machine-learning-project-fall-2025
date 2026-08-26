@@ -11,25 +11,14 @@ The project covers two parts of the DTU 02452 Machine Learning coursework:
 
 Both notebooks read the tracked `Concrete_Data.xls` dataset. The classification work derives strength classes from the continuous compressive-strength target inside the second notebook.
 
-## Requirements
+## Notebook Sequence
 
-The project uses Python and Jupyter notebooks. No exact Python version is established in the repository. The main analysis dependencies include NumPy, pandas, Matplotlib, seaborn, scikit-learn, SciPy, statsmodels, and `xlrd` for reading the legacy `.xls` dataset.
+The notebook numbers define the intended reading order:
 
-Create a project-local virtual environment and install the recorded dependencies with `uv`:
+1. `01-ml-assignment-data-feature-extraction-and-visualization.ipynb` inspects the data, calculates descriptive statistics, visualizes the attributes, standardizes the features, and performs PCA
+2. `02-ml-assignment-supervised-learning-classification-and-regression.ipynb` performs the regression and classification analyses, including model selection, nested cross-validation, and statistical comparisons
 
-```powershell
-uv venv
-uv pip install -r requirements.txt
-```
-
-## Usage
-
-Open either notebook in the VS Code notebook editor or another Jupyter-capable editor configured to use the project kernel, then run its cells from top to bottom:
-
-- `01-ml-assignment-data-feature-extraction-and-visualization.ipynb`
-- `02-ml-assignment-supervised-learning-classification-and-regression.ipynb`
-
-Keep `Concrete_Data.xls` in the repository root because both notebooks load it using that relative path. The notebooks are independent and may be run separately.
+Each notebook loads `Concrete_Data.xls` directly and can be evaluated independently. Within a notebook, cells must be evaluated from top to bottom because later cells use variables and fitted models created earlier.
 
 ## Project Structure
 
@@ -46,12 +35,15 @@ Keep `Concrete_Data.xls` in the repository root because both notebooks load it u
 
 [Concrete_Readme.txt](Concrete_Readme.txt) contains the dataset description, variable units, attribution, and reuse notice. `Plots/` contains the exported figures retained with the coursework.
 
+`requirements.txt` records the numerical, statistical, plotting, spreadsheet-reading, and notebook-kernel libraries used by the analyses.
+
 ## Output
 
 The current notebooks display their tables, metrics, and plots as notebook output. They do not automatically write new workbooks, model files, or plot files. The PNG files under `Plots/` are tracked project artifacts rather than a guaranteed output of each notebook run.
 
-## Notes
+## Limitations and Assumptions
 
 - The dataset contains 1,030 observations, eight quantitative predictors, and one compressive-strength target measured in MPa
-- Run cells in order because later analysis cells depend on variables and fitted models created earlier in the notebook
+- `Concrete_Data.xls` must remain in the repository root because both notebooks use that relative path
+- The retained PNG files are reference artifacts; the current notebooks do not save or refresh them automatically
 - This is an offline coursework repository; it has no API credentials or external service configuration
