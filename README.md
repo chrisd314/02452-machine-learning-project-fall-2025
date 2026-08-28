@@ -53,7 +53,6 @@ There is no shared Python package between the notebooks and no persistent model 
 │   ├── PCA Scree Plot.png
 │   └── ...
 ├── .gitignore
-├── configuration.md
 ├── requirements.txt
 └── README.md
 ```
@@ -89,8 +88,6 @@ There are no environment variables, `.env` files, command-line options, or exter
 - selecting an environment containing the declared packages
 - changing notebook constants directly when intentionally running a different experiment.
 
-See [configuration.md](configuration.md) for the exact dataset schema, hyperparameter grids, class boundaries, working-directory behavior, and preflight checklist.
-
 ## Inputs and Output
 
 ### Dataset schema
@@ -108,9 +105,9 @@ See [configuration.md](configuration.md) for the exact dataset schema, hyperpara
 | Target | Concrete compressive strength | MPa |
 
 The implementation addresses the target by its exact workbook header, including a trailing space. Renaming or trimming that column in the workbook will break both notebooks unless their lookup expressions are updated too.
+
 ## Related Documentation
 
-- [Configuration reference](configuration.md)
 - [Dataset description, attribution, and reuse notice](Concrete_Readme.txt)
 - [Exploratory analysis and PCA notebook](01-ml-assignment-data-feature-extraction-and-visualization.ipynb)
 - [Supervised learning notebook](02-ml-assignment-supervised-learning-classification-and-regression.ipynb)
