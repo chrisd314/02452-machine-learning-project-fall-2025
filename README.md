@@ -5,7 +5,6 @@ Exploratory data analysis, principal component analysis, regression, and multicl
 ## Contents
 
 - [Overview](#overview)
-- [Architecture](#architecture)
 - [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -20,18 +19,6 @@ The notebooks cover two stages of the coursework:
 
 1. Inspect the dataset, calculate descriptive statistics, visualize the predictors, standardize the feature matrix, and perform principal component analysis (PCA).
 2. Treat compressive strength first as a continuous regression target and then as a derived three-class classification target. Compare baselines, linear models, and ANNs using cross-validation and statistical tests.
-
-## Architecture
-
-| Component | Responsibility |
-| --- | --- |
-| `01-ml-assignment-data-feature-extraction-and-visualization.ipynb` | Exploratory analysis and PCA |
-| `02-ml-assignment-supervised-learning-classification-and-regression.ipynb` | Regression and classification experiments |
-| `Concrete_Data.xls` | Primary input |
-| `Concrete_Readme.txt` | Dataset reference |
-| `Plots/` | Tracked reference figures |
-
-There is no shared Python package between the notebooks and no persistent model state. The second notebook rebuilds every model in memory during execution.
 
 ## Repository Structure
 
