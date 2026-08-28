@@ -9,8 +9,7 @@ Exploratory data analysis, principal component analysis, regression, and multicl
 - [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Inputs and Outputs](#inputs-and-outputs)
-- [Troubleshooting](#troubleshooting)
+- [Inputs and Output](#inputs-and-output)
 - [Related Documentation](#related-documentation)
 
 ## Overview
@@ -92,7 +91,7 @@ There are no environment variables, `.env` files, command-line options, or exter
 
 See [configuration.md](configuration.md) for the exact dataset schema, hyperparameter grids, class boundaries, working-directory behavior, and preflight checklist.
 
-## Inputs and Outputs
+## Inputs and Output
 
 ### Dataset schema
 
@@ -109,21 +108,6 @@ See [configuration.md](configuration.md) for the exact dataset schema, hyperpara
 | Target | Concrete compressive strength | MPa |
 
 The implementation addresses the target by its exact workbook header, including a trailing space. Renaming or trimming that column in the workbook will break both notebooks unless their lookup expressions are updated too.
-
-## Troubleshooting
-
-| Problem | Likely cause | Resolution |
-| --- | --- | --- |
-| `FileNotFoundError` for `Concrete_Data.xls` | The notebook server’s working directory is not the repository root, or the file was moved. | Start the frontend from the repository root and verify the filename and capitalization. |
-| `KeyError` for the compressive-strength column | The workbook header was edited; the code expects its exact original text, including trailing whitespace. | Restore the tracked dataset or update the lookup consistently in both notebooks for an intentional schema change. |
-| Pandas reports that it cannot determine or use an Excel engine | `xlrd` is missing or the selected environment differs from `requirements.txt`. | Select `.venv\Scripts\python.exe` in VS Code, open a new integrated terminal, and install the recorded requirements. |
-| Import errors when opening a notebook | The selected kernel is not the environment where requirements were installed. | Select the `.venv` interpreter/kernel and restart the notebook kernel. |
-| Installation on another operating system fails at `pywin32` | The committed snapshot is Windows-oriented, and that platform is outside the validated workflow. | Use the documented Windows/VS Code setup or prepare and independently validate a platform-specific dependency set; none is supplied here. |
-| Notebook 02 runs for a long time or saturates the machine | Nested searches fit many candidates and use all processors through `n_jobs=-1`. | Allow the cell to finish, or deliberately reduce the documented grids/fold counts in a separate experiment. |
-| A later cell reports an undefined variable | Cells were run out of order or the kernel was restarted. | Restart the kernel and run the notebook from the first cell. |
-| Results differ after changing constants | Hyperparameter grids, folds, thresholds, or random seeds were changed. | Compare against [configuration.md](configuration.md) and restart/run all cells to remove stale state. |
-| A plot in `Plots/` does not match fresh notebook output | PNG export is not automated. | Treat the notebook as current runtime output and update the static artifact deliberately if required. |
-
 ## Related Documentation
 
 - [Configuration reference](configuration.md)
