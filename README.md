@@ -59,9 +59,7 @@ There is no shared Python package between the notebooks and no persistent model 
 
 The abbreviated `Plots/` listing shows representative artifacts.
 
-
 ## Installation
-
 
 1. Clone the repository and create its environment:
 
@@ -72,6 +70,7 @@ py -m venv .venv
 ```
 
 2. Open this repository folder and activate the virtual environment.
+
 3. Install the requirements:
 
 ```console
