@@ -13,7 +13,7 @@ Exploratory data analysis, principal component analysis, regression, and multicl
 
 ## Overview
 
-This repository contains two executed Jupyter notebooks built around the Concrete Compressive Strength dataset described in `Concrete_Readme.txt`. The eight numeric predictors describe a concrete mixture and its age. The target is laboratory-measured compressive strength in MPa.
+This repository contains two Jupyter notebooks built around the Concrete Compressive Strength dataset described in `Concrete_Readme.txt`. The eight numeric predictors describe a concrete mixture and its age. The target is laboratory-measured compressive strength in MPa.
 
 The notebooks cover two stages of the coursework:
 
